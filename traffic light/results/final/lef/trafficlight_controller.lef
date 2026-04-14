@@ -1,0 +1,167 @@
+VERSION 5.7 ;
+  NOWIREEXTENSIONATPIN ON ;
+  DIVIDERCHAR "/" ;
+  BUSBITCHARS "[]" ;
+MACRO trafficlight_controller
+  CLASS BLOCK ;
+  FOREIGN trafficlight_controller ;
+  ORIGIN 0.000 0.000 ;
+  SIZE 100.000 BY 100.000 ;
+  PIN VGND
+    DIRECTION INOUT ;
+    USE GROUND ;
+    PORT
+      LAYER met4 ;
+        RECT 19.115 10.640 20.715 87.280 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 41.310 10.640 42.910 87.280 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 63.505 10.640 65.105 87.280 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 85.700 10.640 87.300 87.280 ;
+    END
+    PORT
+      LAYER met5 ;
+        RECT 5.280 22.900 94.540 24.500 ;
+    END
+    PORT
+      LAYER met5 ;
+        RECT 5.280 41.940 94.540 43.540 ;
+    END
+    PORT
+      LAYER met5 ;
+        RECT 5.280 60.980 94.540 62.580 ;
+    END
+    PORT
+      LAYER met5 ;
+        RECT 5.280 80.020 94.540 81.620 ;
+    END
+  END VGND
+  PIN VPWR
+    DIRECTION INOUT ;
+    USE POWER ;
+    PORT
+      LAYER met4 ;
+        RECT 15.815 10.640 17.415 87.280 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 38.010 10.640 39.610 87.280 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 60.205 10.640 61.805 87.280 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 82.400 10.640 84.000 87.280 ;
+    END
+    PORT
+      LAYER met5 ;
+        RECT 5.280 19.600 94.540 21.200 ;
+    END
+    PORT
+      LAYER met5 ;
+        RECT 5.280 38.640 94.540 40.240 ;
+    END
+    PORT
+      LAYER met5 ;
+        RECT 5.280 57.680 94.540 59.280 ;
+    END
+    PORT
+      LAYER met5 ;
+        RECT 5.280 76.720 94.540 78.320 ;
+    END
+  END VPWR
+  PIN clear
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.213000 ;
+    PORT
+      LAYER met3 ;
+        RECT 96.000 71.440 100.000 72.040 ;
+    END
+  END clear
+  PIN clock
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.213000 ;
+    PORT
+      LAYER met2 ;
+        RECT 54.830 0.000 55.110 4.000 ;
+    END
+  END clock
+  PIN hwy[0]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.795200 ;
+    PORT
+      LAYER met3 ;
+        RECT 0.000 57.840 4.000 58.440 ;
+    END
+  END hwy[0]
+  PIN hwy[1]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.795200 ;
+    PORT
+      LAYER met2 ;
+        RECT 0.090 0.000 0.370 4.000 ;
+    END
+  END hwy[1]
+  PIN road[0]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.795200 ;
+    PORT
+      LAYER met2 ;
+        RECT 12.970 96.000 13.250 100.000 ;
+    END
+  END road[0]
+  PIN road[1]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.795200 ;
+    PORT
+      LAYER met2 ;
+        RECT 70.930 96.000 71.210 100.000 ;
+    END
+  END road[1]
+  PIN x
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.196500 ;
+    PORT
+      LAYER met3 ;
+        RECT 96.000 10.240 100.000 10.840 ;
+    END
+  END x
+  OBS
+      LAYER li1 ;
+        RECT 5.520 10.795 94.300 87.125 ;
+      LAYER met1 ;
+        RECT 0.070 10.640 95.150 87.280 ;
+      LAYER met2 ;
+        RECT 0.100 95.720 12.690 96.000 ;
+        RECT 13.530 95.720 70.650 96.000 ;
+        RECT 71.490 95.720 95.130 96.000 ;
+        RECT 0.100 4.280 95.130 95.720 ;
+        RECT 0.650 4.000 54.550 4.280 ;
+        RECT 55.390 4.000 95.130 4.280 ;
+      LAYER met3 ;
+        RECT 4.000 72.440 96.000 87.205 ;
+        RECT 4.000 71.040 95.600 72.440 ;
+        RECT 4.000 58.840 96.000 71.040 ;
+        RECT 4.400 57.440 96.000 58.840 ;
+        RECT 4.000 11.240 96.000 57.440 ;
+        RECT 4.000 10.375 95.600 11.240 ;
+  END
+END trafficlight_controller
+END LIBRARY
+

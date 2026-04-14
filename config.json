@@ -1,0 +1,12 @@
+{
+  "DESIGN_NAME": "trafficlight_controller",
+  "VERILOG_FILES": "dir::src/*.v",
+  "CLOCK_PORT": "clk",
+  "CLOCK_PERIOD": 10,
+  "FP_CORE_UTIL": 50,
+  "PL_TARGET_DENSITY": 0.55,
+  "FP_SIZING": "absolute",
+  "DIE_AREA": "0 0 100 100",
+  "PDK": "sky130A",
+  "STD_CELL_LIBRARY": "sky130_fd_sc_hd"
+}

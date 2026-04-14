@@ -1,0 +1,84 @@
+library (trafficlight_controller) {
+  comment                        : "";
+  delay_model                    : table_lookup;
+  simulation                     : false;
+  capacitive_load_unit (1,pF);
+  leakage_power_unit             : 1pW;
+  current_unit                   : "1A";
+  pulling_resistance_unit        : "1kohm";
+  time_unit                      : "1ns";
+  voltage_unit                   : "1v";
+  library_features(report_delay_calculation);
+
+  input_threshold_pct_rise : 50;
+  input_threshold_pct_fall : 50;
+  output_threshold_pct_rise : 50;
+  output_threshold_pct_fall : 50;
+  slew_lower_threshold_pct_rise : 20;
+  slew_lower_threshold_pct_fall : 20;
+  slew_upper_threshold_pct_rise : 80;
+  slew_upper_threshold_pct_fall : 80;
+  slew_derate_from_library : 1.0;
+
+
+  nom_process                    : 1.0;
+  nom_temperature                : 25.0;
+  nom_voltage                    : 1.80;
+
+  type ("hwy") {
+    base_type : array;
+    data_type : bit;
+    bit_width : 2;
+    bit_from : 1;
+    bit_to : 0;
+  }
+  type ("road") {
+    base_type : array;
+    data_type : bit;
+    bit_width : 2;
+    bit_from : 1;
+    bit_to : 0;
+  }
+
+  cell ("trafficlight_controller") {
+    pin("clear") {
+      direction : input;
+      capacitance : 0.0029;
+    }
+    pin("clock") {
+      direction : input;
+      capacitance : 0.0031;
+    }
+    pin("x") {
+      direction : input;
+      capacitance : 0.0029;
+    }
+    bus("hwy") {
+      bus_type : hwy;
+      direction : output;
+      capacitance : 0.0000;
+    pin("hwy[1]") {
+      direction : output;
+      capacitance : 0.0014;
+    }
+    pin("hwy[0]") {
+      direction : output;
+      capacitance : 0.0005;
+    }
+    }
+    bus("road") {
+      bus_type : road;
+      direction : output;
+      capacitance : 0.0000;
+    pin("road[1]") {
+      direction : output;
+      capacitance : 0.0011;
+    }
+    pin("road[0]") {
+      direction : output;
+      capacitance : 0.0011;
+    }
+    }
+  }
+
+}
