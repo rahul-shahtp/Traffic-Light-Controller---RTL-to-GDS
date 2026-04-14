@@ -158,7 +158,13 @@ make mount
 | Sky130A PDK | 130nm Process |
 
 ---
-
+## Related Repositories
+ 
+| Repo | Description |
+|---|---|
+| [traffic-light](https://github.com/rahul-shahtp/traffic-light) | Original RTL design — Verilog source and testbench |
+| [Traffic-Light-Controller---RTL-to-GDS](https://github.com/rahul-shahtp/Traffic-Light-Controller---RTL-to-GDS) | This repo — Full RTL to GDS ASIC flow |
+ 
 
 ---
 
