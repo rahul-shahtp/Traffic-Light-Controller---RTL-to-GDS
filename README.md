@@ -139,7 +139,7 @@ make mount
 
 ### GDS Layout (KLayout)
 
-![GDS Layout](results/final/gds/layout_screenshot.png)
+![GDS Layout](docs/layout.png)
 
 ---
 
